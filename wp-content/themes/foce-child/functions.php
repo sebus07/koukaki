@@ -14,3 +14,9 @@ if ( get_stylesheet() !== get_template() ) {
         return get_option( 'theme_mods_' . get_template(), $default );
     } );
 }
+
+// ajout d'un js pour le theme enfant
+function ajouter_script_personnalise() {
+    wp_enqueue_script('script_js', get_stylesheet_directory_uri() . '/js/mon_script.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'ajouter_script_personnalise');
