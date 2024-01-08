@@ -136,4 +136,10 @@ document.addEventListener("DOMContentLoaded", function() {
     imageArticle.style.background = "url('wp-content/uploads/2024/01/Studio_koukaki-image_place.png";
 
     //ajout des nuage//
+
+
+
+
+
+
     

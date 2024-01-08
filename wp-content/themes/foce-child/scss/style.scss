@@ -1,0 +1,33 @@
+
+// fleur rotation
+.story h2::after,
+.story__article::after,
+#studio h2::after,
+#studio h2::before,
+.site-footer::before,
+.site-footer ul::after,
+#colophon.site-footer::after{  
+  background-image: url(./assets/images/Sunflower.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+
+  animation: rotating 10s linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateInfinitely {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
