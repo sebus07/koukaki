@@ -21,6 +21,8 @@
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
+define('WP_CACHE', true);
+define( 'WPCACHEHOME', 'C:\MAMP\htdocs\fleurs_d_oranger\wp-content\plugins\wp-super-cache/' );
 define( 'DB_NAME', 'oranger' );
 
 /** Utilisateur de la base de données MySQL. */

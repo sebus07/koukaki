@@ -1,44 +1,65 @@
 // mon_script.js
 
-///// remplacement de la balise banner en header video///////
-document.addEventListener("DOMContentLoaded", function() {
-    // Vérifiez si l'élément de la bannière existe
+document.addEventListener("DOMContentLoaded", function () {
     let bannerElement = document.querySelector(".banner");
-    console.log(bannerElement);
+    
     if (bannerElement) {
-        // Créez une balise vidéo
-        let bannerVideo = document.createElement("video");
+      let bannerVideo = document.createElement("video");
+  
+      bannerVideo.src = "https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/DWP+IW_P9+Studio+d'animation/Studio+Koukaki-vide%CC%81o+header+sans+son+(1).mp4";
+      bannerVideo.autoplay = true;
+      bannerVideo.loop = true;
+      bannerVideo.muted = true;
+      bannerVideo.className = "banner-video"; // Ajoutez une classe à la balise vidéo
+  
+      bannerElement.style.position = "relative";
+      bannerElement.style.background = "url('https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/DWP+IW_P9+Studio+d'animation/Studio+Koukaki-vide%CC%81o+header+sans+son+(1).mp4') no-repeat center center fixed";
+      bannerElement.style.backgroundSize = "cover";
+      bannerElement.innerHTML = "";
+  
+      bannerElement.appendChild(bannerVideo);
+  
+      let logoImage = document.createElement("img");
+      logoImage.src = "http://localhost/fleurs_d_oranger/wp-content/themes/foce/assets/images/logo.png";
+      logoImage.alt = "logo Fleurs d'oranger & chats errants";
+  
+      logoImage.style.position = "absolute";
+      logoImage.style.top = "60%";
+      logoImage.style.left = "50%";
+      logoImage.style.transform = "translate(-50%, -50%)";
+  
+      bannerElement.appendChild(logoImage);
 
-        // Ajoutez des attributs à la balise vidéo
-        bannerVideo.src = "https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/DWP+IW_P9+Studio+d'animation/Studio+Koukaki-vide%CC%81o+header+sans+son+(1).mp4";
-        bannerVideo.autoplay = true;
-        bannerVideo.loop = true;
-        bannerVideo.muted = true;
-
-        // Appliquez la balise vidéo comme background de la bannière
-        bannerElement.style.position = "relative"; 
-        bannerElement.style.background = "url('https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/DWP+IW_P9+Studio+d'animation/Studio+Koukaki-vide%CC%81o+header+sans+son+(1).mp4') no-repeat center center fixed";
-        bannerElement.style.backgroundSize = "cover";
-        bannerElement.innerHTML = ""; // Effacez le contenu de la bannière
-
-        // Ajoutez la balise vidéo à la bannière
-        bannerElement.appendChild(bannerVideo);
-
-        // Ajoutez une balise img en dessous de la vidéo
-        let logoImage = document.createElement("img");
-        logoImage.src = "http://localhost/fleurs_d_oranger/wp-content/themes/foce/assets/images/logo.png";
-        logoImage.alt = "logo Fleurs d'oranger & chats errants";
-
-        // Positionnez l'image au centre de la bannière
-        logoImage.style.position = "absolute";
-        logoImage.style.top = "60%";
-        logoImage.style.left = "50%";
-        logoImage.style.transform = "translate(-50%, -50%)";
-        
-        bannerElement.appendChild(logoImage);
+      
+  
+      // Ajoutez une classe spécifique en fonction de la largeur de l'écran
+      window.addEventListener("resize", function () {
+        if (window.innerWidth < 768) {
+          bannerVideo.classList.add("mobile-video");
+        } else {
+          bannerVideo.classList.remove("mobile-video");
+        }
+      });
+  
+      // Initialisez la classe au chargement de la page
+      if (window.innerWidth < 768) {
+        bannerVideo.classList.add("mobile-video");
+      }
     }
-});
-
+  });
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    let bannerElement = document.querySelector(".banner");
+    let bannerVideo = document.querySelector(".banner-video");
+  
+    if (bannerElement && bannerVideo) {
+      // Attendre que la vidéo soit chargée
+      bannerVideo.addEventListener("loadedmetadata", function () {
+        // Définir la hauteur de la section sur la hauteur de la vidéo
+        bannerElement.style.height = bannerVideo.videoHeight + "px";
+      });
+    }
+  });
 
 /// creation du slider personnages ///
 
@@ -46,17 +67,17 @@ let sliderPersonnage = document.querySelector("figure img");
 console.log(sliderPersonnage);
 let divSlider = document.querySelector("#characters");
 console.log(divSlider);
-let titreSectionPersonnages = document.querySelector(".main-character h3" )
+let titreSectionPersonnages = document.querySelector(".main-character h3")
 console.log(titreSectionPersonnages);
 
 
 let imageIndex = 0;
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Masquer les anciennes images
     let images = document.querySelectorAll('img[alt="Kawaneko"]');
     if (images.length > 0) {
-        images.forEach(function(image) {
+        images.forEach(function (image) {
             image.style.display = "none";
 
             // Trouver le <figcaption> correspondant et le masquer
@@ -93,17 +114,17 @@ document.addEventListener("DOMContentLoaded", function() {
     sliderContainer.setAttribute("height", "442");
     // Ajuster la justification du texte à gauche
     titreSectionPersonnages.style.textAlign = "left";
-    
+
 
     // Ajuster l'image de fond à gauche
     titreSectionPersonnages.style.backgroundPositionX = "3%";
-    
-    
+
+
 
     // Remplacer chaque figure avec les nouvelles images
     const newImages = [
         "wp-content/uploads/2022/06/Kawaneko.png",
-        "wp-content/uploads/2022/06/Orenjiiro-1.png", 
+        "wp-content/uploads/2022/06/Orenjiiro-1.png",
         "wp-content/uploads/2022/06/Pinku-1.png",
         "wp-content/uploads/2022/06/Tenshi-1.png",
         "wp-content/uploads/2022/06/jaakuna-1.png"
@@ -130,21 +151,114 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //////changement background image lieu/////
-    let imageArticle =document.querySelector("#place");
-    console.log(imageArticle);
+let imageArticle = document.querySelector("#place");
+console.log(imageArticle);
 
-    imageArticle.style.background = "url('wp-content/uploads/2024/01/Studio_koukaki-image_place.png";
+imageArticle.style.background = "url('wp-content/uploads/2024/01/Studio_koukaki-image_place.png')";
 
-    //ajout des nuage//
+document.addEventListener('DOMContentLoaded', function () {
+    const placeElement = document.getElementById('place');
+    const movingImage = document.createElement('div');
+    movingImage.classList.add('change-image');
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const placeElement = document.getElementById('place');
-        const movingImage = document.createElement('div');
-        movingImage.classList.add('moving-image');
-        placeElement.appendChild(movingImage);
+    // Ajout du background-image 
+    movingImage.style.backgroundImage = 'url("wp-content/uploads/2024/01/big_cloud.png")';
+    movingImage.style.backgroundSize = 'contain';
+    movingImage.style.backgroundRepeat = 'no-repeat';
+    placeElement.appendChild(movingImage);
+
+    function handleScroll() {
+        const rect = placeElement.getBoundingClientRect();
+        if (rect.top <= window.innerHeight) {
+            // La div est visible dans la fenêtre
+            movingImage.classList.add('animate-on-scroll');
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const placeElement2 = document.getElementById('place');
+    const moving2Image = document.createElement('div');
+    moving2Image.classList.add('imgLieu');
+
+    // Ajout du background-image
+    moving2Image.style.backgroundImage = 'url("wp-content/uploads/2024/01/big_cloud.png")';
+    moving2Image.style.backgroundSize = 'contain';
+    moving2Image.style.backgroundRepeat = 'no-repeat';
+    placeElement2.appendChild(moving2Image);
+});
+
+
+// Sélectionnez la balise h2 existante (par exemple, en utilisant getElementById, getElementsByClassName, querySelector, etc.)
+let monTitreH2Histoire = document.querySelector(".story h2"); // Remplacez "monTitre" par l'ID réel de votre balise h3
+
+// Ajoutez une classe à la balise h3
+monTitreH2Histoire.classList.add("maNouvelleClasseStory");
+  
+
+
+// Sélectionnez la section existante par son ID
+let maSectionStudio = document.getElementById("studio");
+
+// Ajoutez la classe à la section
+if (maSectionStudio) { // Assurez-vous que l'élément a été trouvé
+  maSectionStudio.classList.add("studio");
+}
+
+// Sélectionnez la balise h2 existante (par exemple, en utilisant getElementById, getElementsByClassName, querySelector, etc.)
+let monTitreH2Studio = document.querySelector(".studio h2"); // Remplacez "monTitre" par l'ID réel de votre balise h3
+
+// Ajoutez une classe à la balise h3
+monTitreH2Studio.classList.add("maNouvelleClasseStudio");
+
+
+// Sélectionnez la balise h3 existante (par exemple, en utilisant getElementById, getElementsByClassName, querySelector, etc.)
+let monTitreH3Personnages = document.querySelector(".main-character h3"); // Remplacez "monTitre" par l'ID réel de votre balise h3
+
+// Ajoutez une classe à la balise h3
+monTitreH3Personnages.classList.add("maNouvelleClassePersonages");
+
+
+
+
+// Sélectionnez la section existante par son ID
+let maSectionArticle = document.getElementById("place");
+
+// Ajoutez la classe à la section
+if (maSectionArticle) { // Assurez-vous que l'élément a été trouvé
+  maSectionArticle.classList.add("place");
+}
+
+// Sélectionnez la balise h3 existante (par exemple, en utilisant getElementById, getElementsByClassName, querySelector, etc.)
+let monTitreH2Lieu = document.querySelector(".place h3"); // Remplacez "monTitre" par l'ID réel de votre balise h3
+
+// Ajoutez une classe à la balise h3
+monTitreH2Lieu.classList.add("lieu");
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var imgLieu = document.querySelector("#place .imgLieu");
+  
+    var options = {
+      threshold: 0.5, // Changez cette valeur en fonction de vos besoins
+    };
+  
+    var observer = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          imgLieu.style.animation = "moving2Image 3s linear forwards";
+          observer.unobserve(entry.target);
+        }
       });
+    }, options);
+  
+    observer.observe(imgLieu);
+  });
+  
 
 
 
-
-    

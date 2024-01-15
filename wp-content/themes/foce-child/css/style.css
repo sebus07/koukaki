@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .story h2::after,
 .story__article::after,
 #studio h2::after,
@@ -5,18 +6,94 @@
 .site-footer::before,
 .site-footer ul::after,
 #colophon.site-footer::after {
-  background-image: url(./assets/images/Sunflower.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  animation: rotating 10s linear infinite; }
+  animation: rotating 10s linear infinite;
+}
 
 @keyframes rotating {
   from {
-    transform: rotate(0); }
+    transform: rotate(0);
+  }
   to {
-    transform: rotate(360deg); } }
-
+    transform: rotate(360deg);
+  }
+}
 @keyframes rotateInfinitely {
   to {
-    transform: rotate(360deg); } }
+    transform: rotate(360deg);
+  }
+}
+#place {
+  position: relative;
+}
+#place .change-image {
+  width: 316px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-90%);
+  animation: moveImage 6s forwards;
+  /* forwards pour que l'animation reste à la fin */
+  opacity: 0.8;
+  filter: blur(10px);
+}
+
+@keyframes moveImage {
+  0% {
+    right: 120px;
+    /* Décalage initial pour qu'il parte de la droite */
+  }
+  100% {
+    right: 550px;
+    /* Fin à la position centrale */
+  }
+}
+#place {
+  position: relative;
+}
+#place .imgLieu {
+  width: 142px;
+  height: 55px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-150%);
+  animation: moving2Image 3s linear forwards;
+  /* forwards pour que l'animation reste à la fin */
+  opacity: 0.8;
+  filter: blur(10px);
+}
+
+@keyframes moving2Image {
+  0% {
+    right: 550px;
+    /* Décalage initial pour qu'il parte de la droite */
+  }
+  100% {
+    right: 880px;
+    /* Fin à la position centrale */
+  }
+}
+.banner-video {
+  width: 100%; /* Ajustez selon vos besoins */
+  height: auto;
+}
+
+.mobile-video {
+  width: 100%; /* Ajustez selon vos besoins */
+  height: auto;
+}
+
+.banner {
+  background-image: none !important; /* Ajoutez !important pour s'assurer que la règle est appliquée */
+  width: 100%; /* Ajustez selon vos besoins */
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.banner-video img {
+  position: center !important;
+}
+
+/*# sourceMappingURL=style.css.map */
