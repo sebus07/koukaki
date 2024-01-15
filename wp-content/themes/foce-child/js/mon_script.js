@@ -137,7 +137,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //ajout des nuage//
 
-
+    document.addEventListener('DOMContentLoaded', function () {
+        const placeElement = document.getElementById('place');
+        const movingImage = document.createElement('div');
+        movingImage.classList.add('moving-image');
+        placeElement.appendChild(movingImage);
+      });
 
 
 
