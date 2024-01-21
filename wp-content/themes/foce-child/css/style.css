@@ -1,6 +1,11 @@
 @charset "UTF-8";
 .story h2::after,
 .story__article::after,
+li.histoire::after,
+li.lieu::before,
+li.personnages::before,
+li.personnages::after,
+li.studio::after,
 #studio h2::after,
 #studio h2::before,
 .site-footer::before,
@@ -25,9 +30,194 @@
     transform: rotate(360deg);
   }
 }
+.banner-video {
+  width: 100%;
+  /* Ajustez selon vos besoins */
+  height: auto;
+}
+
+.mobile-video {
+  width: 100%;
+  /* Ajustez selon vos besoins */
+  height: auto;
+}
+
+.banner {
+  background-image: none !important;
+  /* Ajoutez !important pour s'assurer que la règle est appliquée */
+  width: 100%;
+  /* Ajustez selon vos besoins */
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.banner-video img {
+  position: center !important;
+}
+
+.oscars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 300px;
+  margin-top: -115px;
+}
+
+.img-oscars {
+  width: 279px;
+  height: 129px;
+  flex-shrink: 0;
+}
+
+.site-footer {
+  position: relative;
+  display: flex;
+  padding-top: 18em;
+  padding-bottom: 1em;
+  flex-direction: column;
+}
+
+.texte {
+  background-image: url("../../../uploads/2024/01/Rectangle.png");
+  width: 750px;
+  height: 280px;
+  background-size: cover;
+}
+
+.texte p {
+  width: 640px;
+  height: 200px;
+  flex-shrink: 0;
+  color: #FFF5E9;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Quicksand;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.95px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.alignText {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 750px;
+  height: 240px;
+}
+
+@media only screen and (min-width: 741px) and (max-width: 1024px) {
+  .oscars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .maNouvelleClasseStudio {
+    font-size: 2rem;
+  }
+  /* Ajoutez d'autres styles spécifiques pour les petits écrans si nécessaire */
+}
+@media only screen and (min-width: 401px) and (max-width: 740px) {
+  .oscars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .texte p {
+    font-size: 1.5rem;
+    width: 280px;
+    height: 200px;
+    background-size: 100% 100%;
+    padding: 12px;
+    text-align: center;
+    padding-top: 50px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .oscars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .maNouvelleClasseStudio {
+    font-size: 2rem;
+  }
+  .maNouvelleClassePersonages {
+    text-align: left;
+  }
+  .texte p {
+    font-size: 1.5rem;
+    width: 280px;
+    height: 200px;
+    background-size: 100% 100%;
+    padding: 12px;
+    text-align: center;
+    padding-top: 50px;
+  }
+  /* Ajoutez d'autres styles spécifiques pour les petits écrans si nécessaire */
+}
+.swiper {
+  width: 1266px;
+  height: 442px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 40px;
+  width: 600px;
+  height: 600px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  width: 400px;
+  height: 440px;
+}
+
+.swiper .mySwiper {
+  height: 442px;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+  box-sizing: content-box;
+  align-items: center;
+  overflow: hidden;
+}
+
+.site-footer::after {
+  position: absolute;
+  right: -4em;
+  bottom: 581px;
+}
+
+.site-footer::before {
+  position: absolute;
+  left: 4em;
+  top: 3em;
+}
+
 #place {
   position: relative;
 }
+
 #place .change-image {
   width: 316px;
   height: 300px;
@@ -35,6 +225,18 @@
   top: 50%;
   transform: translateY(-90%);
   animation: moveImage 6s forwards;
+  /* forwards pour que l'animation reste à la fin */
+  opacity: 0.8;
+  filter: blur(10px);
+}
+
+#place .imgLieu {
+  width: 142px;
+  height: 55px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-150%);
+  animation: moving2Image 3s linear forwards;
   /* forwards pour que l'animation reste à la fin */
   opacity: 0.8;
   filter: blur(10px);
@@ -50,21 +252,6 @@
     /* Fin à la position centrale */
   }
 }
-#place {
-  position: relative;
-}
-#place .imgLieu {
-  width: 142px;
-  height: 55px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-150%);
-  animation: moving2Image 3s linear forwards;
-  /* forwards pour que l'animation reste à la fin */
-  opacity: 0.8;
-  filter: blur(10px);
-}
-
 @keyframes moving2Image {
   0% {
     right: 550px;
@@ -75,25 +262,233 @@
     /* Fin à la position centrale */
   }
 }
-.banner-video {
-  width: 100%; /* Ajustez selon vos besoins */
-  height: auto;
+/* ... (votre CSS existant) ... */
+/* Votre CSS existant */
+.site-header {
+  background-color: #FFD5A2;
+  padding-right: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-.mobile-video {
-  width: 100%; /* Ajustez selon vos besoins */
-  height: auto;
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
-.banner {
-  background-image: none !important; /* Ajoutez !important pour s'assurer que la règle est appliquée */
-  width: 100%; /* Ajustez selon vos besoins */
-  align-content: flex-start;
-  flex-wrap: wrap;
+.menu-toggle, .menu-toggle.close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
-.banner-video img {
-  position: center !important;
+.menu-toggle img {
+  width: 30px;
+  height: 30px;
+  margin-right: 80px;
 }
+
+.site-title a {
+  margin-left: 80px;
+  padding-bottom: 50px;
+}
+
+.menu-toggle.close {
+  background-color: #333;
+  padding: 5px;
+  display: none; /* Masquer le bouton "Close" par défaut */
+}
+
+.menu-toggle.close img {
+  width: 20px;
+  height: 20px;
+}
+
+#menu-burger {
+  display: none;
+}
+
+#menu {
+  display: none;
+}
+
+.burger-menu.visible {
+  display: block;
+}
+
+.burger-menu ul.menu-list {
+  display: none; /* Cacher la liste par défaut */
+}
+
+.burger-menu.visible ul.menu-list {
+  display: block; /* Afficher la liste lorsque la classe 'visible' est présente */
+}
+
+/* Cacher la liste par défaut */
+.burger-menu ul.menu-list {
+  display: none;
+  position: absolute;
+  top: 100%; /* Positionner le menu en dessous de la barre de navigation */
+  left: 0;
+  width: 100%; /* Prendre la largeur totale de son conteneur */
+  background-color: #FFF5E9; /* Fond blanc */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre légère pour la bordure inférieure */
+  z-index: 1000; /* S'assurer que le menu est au-dessus de tout le reste */
+}
+
+/* Afficher la liste lorsque la classe 'visible' est présente */
+.burger-menu.visible ul.menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 850px;
+}
+
+.burger-menu a {
+  text-decoration: none;
+  font-size: 64px;
+}
+
+nav img {
+  margin-top: 35px;
+}
+
+.menu-list li {
+  position: relative;
+  list-style-type: none; /* Supprimer le style de la liste (puce) */
+  margin-top: 57px;
+}
+
+.menu-list li::before,
+.menu-list li::after {
+  content: ""; /* Pour que le pseudo-élément soit visible, il doit avoir du contenu (vide ici) */
+  display: inline-block;
+  width: 100px; /* Ajustez la largeur de l'image selon vos besoins */
+  height: 100px; /* Ajustez la hauteur de l'image selon vos besoins */
+  margin: 0 2px; /* Espacement entre l'image et le texte de chaque élément */
+  vertical-align: middle;
+}
+
+.menu-list li.histoire::before {
+  background: url("../../../uploads/2022/06/cat2.svg") no-repeat;
+  background-size: contain; /* Ajustez la taille de l'image selon vos besoins */
+  width: 90px; /* Ajustez la largeur de l'image selon vos besoins */
+  height: 90px; /* Ajustez la hauteur de l'image selon vos besoins */
+  display: inline-block;
+  position: absolute;
+  right: 30vw;
+  top: 1vw;
+}
+
+.menu-list li.histoire::after {
+  background: url("../../../uploads/2022/06/Sunflower.png") no-repeat;
+  background-size: contain; /* Ajustez la taille de l'image selon vos besoins */
+  width: 135px; /* Ajustez la largeur de l'image selon vos besoins */
+  height: 135px; /* Ajustez la hauteur de l'image selon vos besoins */
+  display: inline-block;
+  position: absolute;
+  left: 30vw;
+  top: -4vw;
+}
+
+.menu-list li.personnages::before {
+  background: url("../../../uploads/2022/06/orchid.png") no-repeat;
+  background-size: contain; /* Ajustez la taille de l'image selon vos besoins */
+  display: inline-block;
+  position: absolute;
+  right: 45vw;
+  bottom: 10vw;
+}
+
+.menu-list li.personnages::after {
+  background: url("../../../uploads/2022/06/random_flower.png") no-repeat;
+  background-size: contain; /* Ajustez la taille de l'image selon vos besoins */
+  position: absolute;
+  left: 44vw;
+  top: 7vw;
+}
+
+.menu-list li.lieu::before {
+  background: url("../../../uploads/2022/06/flower.svg") no-repeat;
+  background-size: contain; /* Ajustez la taille de l'image selon vos besoins */
+  position: absolute;
+  width: 60px; /* Ajustez la largeur de l'image selon vos besoins */
+  height: 60px; /* Ajustez la hauteur de l'image selon vos besoins */
+  right: 30vw;
+  top: 1vw;
+}
+
+.menu-list li.lieu::after {
+  background: url("../../../uploads/2022/06/Group.svg") no-repeat;
+  background-size: contain; /* Ajustez la taille de l'image selon vos besoins */
+  position: absolute;
+  left: 25vw;
+  top: 1vw;
+}
+
+.menu-list li.studio::before {
+  background: url("../../../uploads/2022/06/cat22.svg") no-repeat;
+  background-size: contain; /* Ajustez la taille de l'image selon vos besoins */
+}
+
+.menu-list li.studio::after {
+  background: url("../../../uploads/2022/06/hibiscus_footer.png") no-repeat;
+  background-size: contain; /* Ajustez la taille de l'image selon vos besoins */
+  width: 350px; /* Ajustez la largeur de l'image selon vos besoins */
+  height: 350px; /* Ajustez la hauteur de l'image selon vos besoins */
+}
+
+/* Ajoutez des règles similaires pour les autres éléments de la liste au besoin */
+.menu-list li.studio {
+  max-width: 100%;
+}
+
+.menu-list li.studio::after {
+  content: ""; /* Pour que le pseudo-élément soit visible, il doit avoir du contenu (vide ici) */
+  display: inline-block;
+  background-size: contain; /* Ajustez la taille de l'image selon vos besoins */
+  position: absolute;
+  left: 135%; /* Ajustez la position à gauche */
+  bottom: -350px; /* Ajustez la position en bas */
+  overflow: hidden; /* Cacher les parties qui dépassent du conteneur */
+  object-fit: contain;
+}
+
+.menu-list li.studio::before {
+  display: inline-block;
+  position: absolute;
+  right: 45vw;
+  top: 1vw;
+}
+
+.menu-list li:hover {
+  text-shadow: 0 0 0.2em rgb(249, 98, 17), 0 0 0.2em rgb(206, 72, 10);
+}
+
+li.histoire::before,
+li.lieu::after,
+li.studio::before,
+.maNouvelleClasseStory h2 {
+  background-color: #ffd700; /* couleur jaune pour représenter le chat */
+  border-radius: 50%;
+  position: relative;
+  animation: floating 2s infinite ease-in-out;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/* ... (votre CSS existant) ... */
 
 /*# sourceMappingURL=style.css.map */

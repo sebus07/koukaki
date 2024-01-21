@@ -20,11 +20,16 @@ if ( get_stylesheet() !== get_template() ) {
     } );
 }
 
-// ajout d'un js pour le theme enfant
-function ajouter_script_personnalise() {
-    wp_enqueue_script('script_js', get_stylesheet_directory_uri() . '/js/mon_script.js', array('jquery'), '1.0', true);
+// Ajout de plusieurs scripts JS pour le thème enfant
+function ajouter_scripts_personnalises() {
+    wp_enqueue_script('mon_script_js', get_stylesheet_directory_uri() . '/js/mon_script.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('swiper_js', get_stylesheet_directory_uri() . '/js/swiper.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('banner-video_js', get_stylesheet_directory_uri() . '/js/banner-video.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('section-lieu_js', get_stylesheet_directory_uri() . '/js/section-lieu.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('section-burger_js', get_stylesheet_directory_uri() . '/js/section-burger.js', array('jquery'), '1.0', true);
 }
-add_action('wp_enqueue_scripts', 'ajouter_script_personnalise');
+add_action('wp_enqueue_scripts', 'ajouter_scripts_personnalises');
+
 
 
 
