@@ -233,14 +233,20 @@ li.studio::after,
   position: relative;
 }
 
+#place .change-image.animate-on-scroll {
+  animation: moveImage 3s linear forwards;
+}
+
+#place .imgLieu.animate-on-scroll {
+  animation: moving2Image 3s linear forwards;
+}
+
 #place .change-image {
   width: 316px;
   height: 300px;
   position: absolute;
   top: 50%;
   transform: translateY(-90%);
-  animation: moveImage 6s forwards;
-  /* forwards pour que l'animation reste à la fin */
   opacity: 0.8;
   filter: blur(10px);
 }
@@ -251,8 +257,6 @@ li.studio::after,
   position: absolute;
   top: 50%;
   transform: translateY(-150%);
-  animation: moving2Image 3s linear forwards;
-  /* forwards pour que l'animation reste à la fin */
   opacity: 0.8;
   filter: blur(10px);
 }
@@ -503,12 +507,11 @@ nav img{
 }
 
 
-//// flotement chat  //////
+//// flotement chat dans nav //////
 
 li.histoire::before ,
 li.lieu::after ,
-li.studio::before,
-.maNouvelleClasseStory h2{
+li.studio::before{
   background-color: #ffd700; /* couleur jaune pour représenter le chat */
   border-radius: 50%;
   position: relative;
@@ -523,7 +526,6 @@ li.studio::before,
       transform: translateY(-10px);
   }
 }
-
 
 
 

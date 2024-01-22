@@ -5,5 +5,8 @@
   },
   "dependencies": {
     "swiper": "^11.0.5"
+  },
+  "scripts": {
+    "sass": "node-sass --output-style compressed -o ./wp-content/themes/VotreTheme/ ./wp-content/themes/VotreTheme/sass"
   }
 }

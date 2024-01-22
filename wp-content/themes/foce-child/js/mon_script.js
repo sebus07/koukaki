@@ -51,4 +51,4 @@ monTitreH2Lieu.classList.add("lieu");
 
 
 
-  // Fonction pour activer l'animation lorsque la section est visible
+ 
