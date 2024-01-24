@@ -21,10 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
       logoImage.src = "http://localhost/fleurs_d_oranger/wp-content/themes/foce/assets/images/logo.png";
       logoImage.alt = "logo Fleurs d'oranger & chats errants";
   
-      logoImage.style.position = "absolute";
       logoImage.style.top = "60%";
       logoImage.style.left = "50%";
-      logoImage.style.transform = "translate(-50%, -50%)";
+      logoImage.style.transform = "translate(-0%, -110%)";
   
       bannerElement.appendChild(logoImage);
 

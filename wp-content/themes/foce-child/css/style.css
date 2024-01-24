@@ -492,6 +492,55 @@ li.studio::before {
     transform: translateY(-10px);
   }
 }
+.pers span,
+#studio h2 span,
+.lieu span,
+#story h2 span {
+  position: relative;
+  animation: slidein 2s infinite ease-in-out;
+  width: 300px;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+.lieu span {
+  overflow: hidden;
+}
+
+.banner video {
+  position: relative;
+  top: -100px; /* Commencez à 1000px au-dessus de la position normale */
+  animation: slideDown 1s ease-in-out forwards; /* Animation de descente */
+}
+
+@keyframes slideDown {
+  to {
+    top: 0; /* Descendez jusqu'à la position normale (0px) */
+  }
+}
+.banner img {
+  position: relative;
+  top: 0px; /* Commencez à 50px en dessous de la position normale */
+  left: 0% !important;
+  animation: slideUp 1s ease-in-out forwards; /* Animation de montée */
+}
+
+@keyframes slideUp {
+  from {
+    top: 80px; /* Commencez à 50px en dessous de la position normale */
+  }
+  to {
+    top: 0; /* Montez jusqu'à la position normale (0px) */
+  }
+}
 /* ... (votre CSS existant) ... */
 
 /*# sourceMappingURL=style.css.map */
