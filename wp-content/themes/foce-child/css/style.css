@@ -478,8 +478,6 @@ nav img {
 li.histoire::before,
 li.lieu::after,
 li.studio::before {
-  background-color: #ffd700; /* couleur jaune pour représenter le chat */
-  border-radius: 50%;
   position: relative;
   animation: floating 2s infinite ease-in-out;
 }
@@ -492,29 +490,50 @@ li.studio::before {
     transform: translateY(-10px);
   }
 }
-.pers span,
-#studio h2 span,
-.lieu span,
-#story h2 span {
+.hidden {
+  overflow: hidden; /* Pour masquer le contenu qui dépasse */
+}
+
+.pers span.premier,
+#studio h2 span.premier,
+.lieu span.premier,
+#story h2 span.premier,
+.pers span.deuxieme,
+#studio h2 span.deuxieme,
+.lieu span.deuxieme,
+#story h2 span.deuxieme {
   position: relative;
-  animation: slidein 2s infinite ease-in-out;
   width: 300px;
 }
 
-@keyframes slidein {
+.animate-premier {
+  animation: slidein-premier 0.5s ease-in-out;
+}
+
+@keyframes slidein-premier {
   from {
-    margin-left: 100%;
+    top: 80px;
     width: 300%;
   }
   to {
-    margin-left: 0%;
+    top: 0;
     width: 100%;
   }
 }
-.lieu span {
-  overflow: hidden;
+.animate-deuxieme {
+  animation: slidein-deuxieme 0.8s ease-in-out;
 }
 
+@keyframes slidein-deuxieme {
+  from {
+    top: 80px;
+    width: 300%;
+  }
+  to {
+    top: 0;
+    width: 100%;
+  }
+}
 .banner video {
   position: relative;
   top: -100px; /* Commencez à 1000px au-dessus de la position normale */

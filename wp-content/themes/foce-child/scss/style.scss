@@ -513,8 +513,6 @@ nav img{
 li.histoire::before ,
 li.lieu::after ,
 li.studio::before{
-  background-color: #ffd700; /* couleur jaune pour représenter le chat */
-  border-radius: 50%;
   position: relative;
   animation: floating 2s infinite ease-in-out;
 }
@@ -527,47 +525,60 @@ li.studio::before{
       transform: translateY(-10px);
   }
 }
+.hidden{
+  overflow: hidden; /* Pour masquer le contenu qui dépasse */
 
-
-/// descente des titres////
-.pers span,
-#studio h2 span,
-.lieu span,
-#story h2 span {
-  position: relative;
-  animation: slidein 2s infinite ease-in-out;
-  width: 300px;
-}
-
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
-
-//@keyframes slidein {
-//  from {
-//    top: 100%;
-//    width: 300%;
-//  }
-
-//  to {
-//    top: 0%;
-//    width: 100%;
-//  }
-//}
-
-.lieu span{
-  overflow: hidden;
 }
 
 
+/// Animation descente des titres////
+
+
+
+.pers span.premier,
+    #studio h2 span.premier,
+    .lieu span.premier,
+    #story h2 span.premier,
+    .pers span.deuxieme,
+    #studio h2 span.deuxieme,
+    .lieu span.deuxieme,
+    #story h2 span.deuxieme {
+      position: relative;
+      width: 300px;
+    }
+
+    .animate-premier {
+      animation: slidein-premier 0.5s ease-in-out;
+    }
+
+    @keyframes slidein-premier {
+      from {
+        top: 80px;
+        width: 300%;
+      }
+
+      to {
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    .animate-deuxieme {
+      animation: slidein-deuxieme 0.8s ease-in-out;
+      
+    }
+
+    @keyframes slidein-deuxieme {
+      from {
+        top: 80px;
+        width: 300%;
+      }
+
+      to {
+        top: 0;
+        width: 100%;
+      }
+    }
 
 ///// animation du header ////
 
