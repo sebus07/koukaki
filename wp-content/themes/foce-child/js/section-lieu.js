@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const moving2Image = document.querySelector('.imgLieu');
 
     // Ajout du background-image pour #place
-    placeElement.style.backgroundImage = 'url("wp-content/uploads/2024/01/Studio_koukaki-image_place.png")';
+placeElement.style.backgroundImage = 'url("wp-content/uploads/2024/01/Studio_koukaki-image_place.png")';
+placeElement.style.backgroundSize = 'cover'; // Ajout de la propriété pour la couverture responsive
 
     function handleScroll(entries) {
         entries.forEach((entry) => {
