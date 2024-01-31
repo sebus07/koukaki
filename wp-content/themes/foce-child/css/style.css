@@ -122,6 +122,10 @@ li.studio::after,
   flex-direction: column;
 }
 
+.swiper .mySwiper {
+  overflow: hidden;
+}
+
 .site-footer::after {
   position: absolute;
   right: -4em;
@@ -134,12 +138,20 @@ li.studio::after,
   top: 3em;
 }
 
+.story #place {
+  display: flex;
+  width: 100%;
+  min-height: 300px !important;
+  background-size: cover !important;
+  position: relative !important;
+  margin: 0px !important;
+}
+
 #place {
   position: relative;
   overflow: hidden;
   background-size: cover !important; /* Assurez-vous que l'image couvre toute la zone */
   background-size: auto 100% !important; /* Largeur à 100% de la largeur de la section, hauteur automatique */
-  background-position: center !important;
   background-repeat: no-repeat !important;
 }
 
@@ -155,7 +167,7 @@ li.studio::after,
   width: 316px;
   height: 300px;
   position: absolute;
-  top: 50%;
+  top: 38%;
   transform: translateY(-90%);
   opacity: 0.8;
   filter: blur(10px);
@@ -169,6 +181,17 @@ li.studio::after,
   transform: translateY(-150%);
   opacity: 0.8;
   filter: blur(10px);
+}
+
+.story__article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  font-size: 15px;
+  padding-bottom: 0px !important;
+  background-color: #FFF5E9;
 }
 
 @keyframes moveImage {
@@ -215,12 +238,15 @@ li.studio::after,
   padding: 0;
   display: flex;
   align-items: center;
+  margin: 0;
 }
 
 .menu-toggle img {
   width: 30px;
   height: 30px;
   margin-right: 80px;
+  padding: 0;
+  margin: 0;
 }
 
 .site-title a {
@@ -269,6 +295,8 @@ li.studio::after,
   background-color: #FFF5E9; /* Fond blanc */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre légère pour la bordure inférieure */
   z-index: 1000; /* S'assurer que le menu est au-dessus de tout le reste */
+  padding: 0;
+  margin: 0;
 }
 
 /* Afficher la liste lorsque la classe 'visible' est présente */
@@ -276,7 +304,7 @@ li.studio::after,
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 850px;
+  height: 1200px;
 }
 
 .burger-menu a {
@@ -286,6 +314,8 @@ li.studio::after,
 
 nav img {
   margin-top: 35px;
+  padding: 0;
+  margin: 0;
 }
 
 .menu-list li {
@@ -505,7 +535,30 @@ li.studio::before {
 }
 @media screen and (min-width: 1440px) {
   .banner {
-    height: 55.87vw !important;
+    height: 806px !important;
+  }
+  .story #place {
+    min-height: 699px !important;
+  }
+}
+@media screen and (min-width: 1100px) and (max-width: 1439px) {
+  .story #place {
+    display: flex;
+    width: 100%;
+    min-height: 600px !important;
+    background-size: cover !important;
+    position: relative !important;
+    margin: 0px !important;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1099px) {
+  .story #place {
+    display: flex;
+    width: 100%;
+    min-height: 500px !important;
+    background-size: cover !important;
+    position: relative !important;
+    margin: 0px !important;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1000px) {
@@ -516,6 +569,12 @@ li.studio::before {
   .swiper {
     width: 2000px;
     height: 430px;
+  }
+  .story #place {
+    min-height: 500px;
+  }
+  .burger-menu.visible ul.menu-list {
+    height: 1200px;
   }
 }
 /* Smartphone styles (for screens 480px and above) */
@@ -546,7 +605,6 @@ li.studio::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 690px;
   }
   .menu-list li::before,
   .menu-list li::after {
@@ -609,6 +667,9 @@ li.studio::before {
     align-items: center;
     justify-content: center;
   }
+  .banner {
+    background-image: url("../../../uploads/2024/01/banner.png");
+  }
   .texte p {
     font-size: 1.2rem;
     width: 180px;
@@ -632,7 +693,6 @@ li.studio::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 450px;
   }
   .menu-list li::before,
   .menu-list li::after {
@@ -709,7 +769,193 @@ li.studio::before {
     text-align: center;
     padding-top: 50px;
   }
+  .story #place {
+    min-height: 300px;
+  }
+  .hidden h2,
+  .lieu,
+  #characters h3 {
+    font-size: 25px;
+  }
+  .maNouvelleClassePersonages {
+    margin-left: 150px;
+  }
+  .hidden {
+    display: flex;
+  }
   /* Ajoutez d'autres styles spécifiques pour les petits écrans si nécessaire */
+}
+@media only screen and (min-width: 1001px) and (max-width: 1300px) {
+  #place .change-image,
+  #place .imgLieu {
+    top: 30%;
+    transform: translateY(-110%);
+    opacity: 1;
+    filter: blur(10px);
+  }
+  #place .imgLieu {
+    transform: translateY(-30%);
+  }
+  .story__article {
+    display: flex;
+    width: 55%;
+    font-size: 15px;
+    padding-bottom: 0px !important;
+    background-color: #FFF5E9;
+  }
+  @keyframes moveImage {
+    0% {
+      right: 10%; /* Ajustez la position initiale pour la première image */
+    }
+    100% {
+      right: 40%; /* Ajustez la position finale pour la première image */
+    }
+  }
+  @keyframes moving2Image {
+    0% {
+      right: 25%; /* Ajustez la position initiale pour la deuxième image */
+    }
+    100% {
+      right: 50%; /* Ajustez la position finale pour la deuxième image */
+    }
+  }
+  .change-image {
+    width: 20% !important;
+    height: 20% !important;
+  }
+  .imgLieu {
+    width: 10% !important;
+    height: 10% !important;
+  }
+}
+@media only screen and (min-width: 741px) and (max-width: 1000px) {
+  #place .change-image,
+  #place .imgLieu {
+    top: 30%;
+    transform: translateY(-110%);
+    opacity: 1;
+    filter: blur(10px);
+  }
+  #place .imgLieu {
+    transform: translateY(-30%);
+  }
+  .story__article {
+    display: flex;
+    width: 55%;
+    font-size: 15px;
+    padding-bottom: 0px !important;
+    background-color: #FFF5E9;
+  }
+  @keyframes moveImage {
+    0% {
+      right: 10%; /* Ajustez la position initiale pour la première image */
+    }
+    100% {
+      right: 40%; /* Ajustez la position finale pour la première image */
+    }
+  }
+  @keyframes moving2Image {
+    0% {
+      right: 25%; /* Ajustez la position initiale pour la deuxième image */
+    }
+    100% {
+      right: 50%; /* Ajustez la position finale pour la deuxième image */
+    }
+  }
+  .change-image {
+    width: 20% !important;
+    height: 20% !important;
+  }
+  .imgLieu {
+    width: 10% !important;
+    height: 10% !important;
+  }
+}
+@media only screen and (min-width: 610px) and (max-width: 740px) {
+  #place .change-image,
+  #place .imgLieu {
+    top: 30%;
+    transform: translateY(-110%);
+    opacity: 1;
+    filter: blur(10px);
+  }
+  #place .imgLieu {
+    transform: translateY(-30%);
+  }
+  .story__article {
+    display: flex;
+    width: 55%;
+    font-size: 15px;
+    padding-bottom: 0px !important;
+    background-color: #FFF5E9;
+  }
+  @keyframes moveImage {
+    0% {
+      right: 10%; /* Ajustez la position initiale pour la première image */
+    }
+    100% {
+      right: 40%; /* Ajustez la position finale pour la première image */
+    }
+  }
+  @keyframes moving2Image {
+    0% {
+      right: 25%; /* Ajustez la position initiale pour la deuxième image */
+    }
+    100% {
+      right: 50%; /* Ajustez la position finale pour la deuxième image */
+    }
+  }
+  .change-image {
+    width: 20% !important;
+    height: 20% !important;
+  }
+  .imgLieu {
+    width: 10% !important;
+    height: 10% !important;
+  }
+}
+@media only screen and (min-width: 401px) and (max-width: 609px) {
+  #place .change-image,
+  #place .imgLieu {
+    top: 30%;
+    transform: translateY(-110%);
+    opacity: 1.5;
+    filter: blur(10px);
+  }
+  #place .imgLieu {
+    transform: translateY(0%);
+  }
+  .story__article {
+    display: flex;
+    width: 55%;
+    font-size: 15px;
+    padding-bottom: 0px !important;
+    background-color: #FFF5E9;
+  }
+  @keyframes moveImage {
+    0% {
+      right: 5%; /* Ajustez la position initiale pour la première image */
+    }
+    100% {
+      right: 25%; /* Ajustez la position finale pour la première image */
+    }
+  }
+  @keyframes moving2Image {
+    0% {
+      right: 15%; /* Ajustez la position initiale pour la deuxième image */
+    }
+    100% {
+      right: 35%; /* Ajustez la position finale pour la deuxième image */
+    }
+  }
+  .change-image {
+    width: 20% !important;
+    height: 20% !important;
+  }
+  .imgLieu {
+    width: 10% !important;
+    height: 10% !important;
+  }
 }
 /* ... (votre CSS existant) ... */
 

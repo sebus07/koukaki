@@ -1,4 +1,8 @@
-
+.pers{
+  text-align: left; /* Aligner le texte à gauche */
+  margin: 0; /* Supprimer les marges par défaut */
+  padding: 0; /* Supprimer les espacements internes par défaut */
+}
 
 // fleur rotation
 .story h2::after,
@@ -130,7 +134,10 @@ li.studio::after,
   flex-direction: column;
 }
 
+.swiper .mySwiper {
 
+  overflow: hidden;
+}
 
 
 .site-footer::after {
@@ -146,13 +153,22 @@ li.studio::after,
 
 
 //// effet nuage section lieu////
- 
+
+.story #place {
+  display: flex;
+  width: 100%;
+  min-height: 300px !important;
+  background-size: cover !important;
+  position: relative !important;
+  margin: 0px !important;
+}
+
+
 #place {
   position: relative;
   overflow: hidden;
   background-size: cover !important; /* Assurez-vous que l'image couvre toute la zone */
   background-size: auto 100% !important; /* Largeur à 100% de la largeur de la section, hauteur automatique */
-  background-position: center !important;
   background-repeat: no-repeat !important;
 }
 
@@ -168,7 +184,7 @@ li.studio::after,
   width: 316px;
   height: 300px;
   position: absolute;
-  top: 50%;
+  top: 38%;
   transform: translateY(-90%);
   opacity: 0.8;
   filter: blur(10px);
@@ -183,7 +199,16 @@ li.studio::after,
   opacity: 0.8;
   filter: blur(10px);
 }
-
+.story__article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  font-size: 15px;
+  padding-bottom: 0px !important;
+  background-color: #FFF5E9;
+}
 @keyframes moveImage {
   0% {
     right: 120px;
@@ -237,12 +262,15 @@ li.studio::after,
   padding: 0;
   display: flex;
   align-items: center;
+  margin: 0;
 }
 
 .menu-toggle img {
   width: 30px;
   height: 30px;
   margin-right: 80px;
+  padding: 0;
+  margin: 0;
   
 }
 .site-title a{
@@ -291,6 +319,8 @@ li.studio::after,
   background-color: #FFF5E9; /* Fond blanc */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre légère pour la bordure inférieure */
   z-index: 1000; /* S'assurer que le menu est au-dessus de tout le reste */
+  padding: 0;
+  margin: 0;
 }
 
 /* Afficher la liste lorsque la classe 'visible' est présente */
@@ -298,7 +328,8 @@ li.studio::after,
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 850px;
+  height: 1200px;
+
 }
 .burger-menu a {
   text-decoration: none;
@@ -307,6 +338,8 @@ li.studio::after,
 
 nav img{
   margin-top: 35px;
+  padding: 0;
+  margin: 0;
 }
 
 //// les photo des burger///
@@ -457,7 +490,7 @@ li.studio::before{
 
 
 
-.pers span.premier,
+    .pers span.premier,
     #studio h2 span.premier,
     .lieu span.premier,
     #story h2 span.premier,
@@ -533,7 +566,7 @@ li.studio::before{
   align-content: flex-start;
   flex-wrap: wrap;
   height: calc(100vw * 0.5587) !important;
-  background-image: none !important;
+
   margin: 0;
   padding: 0;
   min-height: 100px !important;
@@ -556,9 +589,33 @@ li.studio::before{
 
 @media screen and (min-width: 1440px) {
   .banner{
-    height: calc(100vw * 0.5587) !important;
+    height: 806px !important;
+  }
+  .story #place {
+    min-height: 699px !important;
   }
 }
+@media screen and (min-width: 1100px) and (max-width: 1439px){
+  .story #place {
+    display: flex;
+    width: 100%;
+    min-height: 600px !important;
+    background-size: cover !important;
+    position: relative !important;
+    margin: 0px !important;
+}
+}
+@media screen and (min-width: 800px) and (max-width: 1099px){
+  .story #place {
+    display: flex;
+    width: 100%;
+    min-height: 500px !important;
+    background-size: cover !important;
+    position: relative !important;
+    margin: 0px !important;
+}
+}
+
 
     @media screen and (min-width: 768px) and (max-width: 1000px) {
         .main-character {
@@ -571,8 +628,15 @@ li.studio::before{
           height: 430px;
         
         }
-      
+        .story #place {
+          min-height: 500px;
+        }
+        
+        .burger-menu.visible ul.menu-list {
+          height: 1200px;
+      }
               }
+
 
         /* Smartphone styles (for screens 480px and above) */
         @media screen and (max-width: 767px) {
@@ -586,6 +650,7 @@ li.studio::before{
           }
       }
       @media only screen and (min-width: 741px) and (max-width: 1024px) {
+      
         .oscars {
           display: flex;
           flex-direction: column;
@@ -604,7 +669,6 @@ li.studio::before{
           display: flex;
           flex-direction: column;
           align-items: center;
-          height: 690px;
       }
         
         .menu-list li::before,
@@ -681,6 +745,9 @@ li.studio::before{
           align-items: center;
           justify-content: center;
         }
+        .banner{
+          background-image: url("../../../uploads/2024/01/banner.png");
+        }
       
         .texte p {
           font-size:1.2rem;
@@ -705,8 +772,7 @@ li.studio::before{
           display: flex;
           flex-direction: column;
           align-items: center;
-          height: 450px;
-      }
+              }
         
         .menu-list li::before,
         .menu-list li::after {
@@ -771,7 +837,6 @@ li.studio::before{
           right: 70;
           top: 7vw;
         }
-
       }
       @media only screen and (max-width: 400px) {
         .oscars {
@@ -798,9 +863,264 @@ li.studio::before{
           text-align: center;
           padding-top: 50px;
         }
+
+        .story #place{
+          min-height: 300px;
+        }
+
+        .hidden h2,
+        .lieu,
+        #characters h3{
+         font-size: 25px;
+        }
+        .maNouvelleClassePersonages{
+          margin-left: 150px;
+         }
+         .hidden{
+          display: flex;
+         }
+
         /* Ajoutez d'autres styles spécifiques pour les petits écrans si nécessaire */
       }
 
+/////////////////////// special nuage ///////////////////////////////////////////////////////////////
+@media only screen and (min-width: 1001px) and (max-width: 1300px){//////////////////////////////////
+  //// effet nuage section lieu 200 a 740////
+          
+  #place .change-image,
+  #place .imgLieu {
+    top: 30%;
+    transform: translateY(-110%);
+    opacity: 1;
+    filter: blur(10px);
+  }
+  
+  #place .imgLieu {
+    transform: translateY(-30%);
+  }
+  
+  .story__article {
+    display: flex;
+    width: 55%;
+    font-size: 15px;
+    padding-bottom: 0px !important;
+    background-color: #FFF5E9;
+  }
+  
+  @keyframes moveImage {
+    0% {
+      right: 10%; /* Ajustez la position initiale pour la première image */
+    }
+  
+    100% {
+      right: 40%; /* Ajustez la position finale pour la première image */
+    }
+  }
+  
+  @keyframes moving2Image {
+    0% {
+      right: 25%; /* Ajustez la position initiale pour la deuxième image */
+    }
+  
+    100% {
+      right: 50%; /* Ajustez la position finale pour la deuxième image */
+    }
+  }
 
+  .change-image{//grand
+    width: 20% !important;
+    height: 20% !important;
+  }
+  .imgLieu{//petit
+    width: 10% !important;
+    height: 10% !important;
+  }
+}
+
+
+
+@media only screen and (min-width: 741px) and (max-width: 1000px){////////////////////////////
+  //// effet nuage section lieu 200 a 740////
+          
+  #place .change-image,
+  #place .imgLieu {
+    top: 30%;
+    transform: translateY(-110%);
+    opacity: 1;
+    filter: blur(10px);
+  }
+  
+  #place .imgLieu {
+    transform: translateY(-30%);
+  }
+  
+  .story__article {
+    display: flex;
+    width: 55%;
+    font-size: 15px;
+    padding-bottom: 0px !important;
+    background-color: #FFF5E9;
+  }
+  
+  @keyframes moveImage {
+    0% {
+      right: 10%; /* Ajustez la position initiale pour la première image */
+    }
+  
+    100% {
+      right: 40%; /* Ajustez la position finale pour la première image */
+    }
+  }
+  
+  @keyframes moving2Image {
+    0% {
+      right: 25%; /* Ajustez la position initiale pour la deuxième image */
+    }
+  
+    100% {
+      right: 50%; /* Ajustez la position finale pour la deuxième image */
+    }
+  }
+
+  .change-image{//grand
+    width: 20% !important;
+    height: 20% !important;
+  }
+  .imgLieu{//petit
+    width: 10% !important;
+    height: 10% !important;
+  }
+}
+
+      @media only screen and (min-width: 610px) and (max-width: 740px){////////////////////////////////
+        //// effet nuage section lieu 200 a 740////
+                
+        #place .change-image,
+        #place .imgLieu {
+          top: 30%;
+          transform: translateY(-110%);
+          opacity: 1;
+          filter: blur(10px);
+        }
+        
+        #place .imgLieu {
+          transform: translateY(-30%);
+        }
+        
+        .story__article {
+          display: flex;
+          width: 55%;
+          font-size: 15px;
+          padding-bottom: 0px !important;
+          background-color: #FFF5E9;
+        }
+        
+        @keyframes moveImage {
+          0% {
+            right: 10%; /* Ajustez la position initiale pour la première image */
+          }
+        
+          100% {
+            right: 40%; /* Ajustez la position finale pour la première image */
+          }
+        }
+        
+        @keyframes moving2Image {
+          0% {
+            right: 25%; /* Ajustez la position initiale pour la deuxième image */
+          }
+        
+          100% {
+            right: 50%; /* Ajustez la position finale pour la deuxième image */
+          }
+        }
+
+        .change-image{//grand
+          width: 20% !important;
+          height: 20% !important;
+        }
+        .imgLieu{//petit
+          width: 10% !important;
+          height: 10% !important;
+        }
+      }
+
+      @media only screen and (min-width: 401px) and (max-width: 609px){/////////////////////////////////
+        #place .change-image,
+        #place .imgLieu {
+          top: 30%;
+          transform: translateY(-110%);
+          opacity: 1.5;
+          filter: blur(10px);
+        }
+        
+        #place .imgLieu {
+          transform: translateY(0%);
+        }
+        
+        .story__article {
+          display: flex;
+          width: 55%;
+          font-size: 15px;
+          padding-bottom: 0px !important;
+          background-color: #FFF5E9;
+        }
+        
+        @keyframes moveImage {
+          0% {
+            right: 5%; /* Ajustez la position initiale pour la première image */
+          }
+        
+          100% {
+            right: 25%; /* Ajustez la position finale pour la première image */
+          }
+        }
+        
+        @keyframes moving2Image {
+          0% {
+            right: 15%; /* Ajustez la position initiale pour la deuxième image */
+          }
+        
+          100% {
+            right: 35%; /* Ajustez la position finale pour la deuxième image */
+          }
+        }
+
+        .change-image{//grand
+          width: 20% !important;
+          height: 20% !important;
+        }
+        .imgLieu{//petit
+          width: 10% !important;
+          height: 10% !important;
+        }
       
+      }
+
+/* Styles spécifiques pour les smartphones (largeur d'écran < 768 pixels) */
+@media only screen and (max-width: 767px) {
+  .banner {
+    background-image: url("./assets/images/banner.pn") !important;
+    /* Ajoutez d'autres styles si nécessaire pour la version smartphone */
+  }
+}
+
+/* Styles spécifiques pour les écrans plus larges (largeur d'écran >= 768 pixels) */
+@media only screen and (min-width: 768px) {
+  .banner {
+    background-image: none !important;
+    /* Ajoutez d'autres styles si nécessaire pour la version écran large */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 /* ... (votre CSS existant) ... */

@@ -87,24 +87,6 @@ get_header();
 <!-- le fichier JavaScript de Swiper -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- Votre script swiper -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var mySwiper = new Swiper(".mySwiper", {
-            slidesPerView: 3,
-            spaceBetween: 40,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-
-        // Ajouter un gestionnaire d'événements pour vérifier si Swiper est correctement initialisé
-        mySwiper.on('init', function() {
-            console.log('Swiper initialized');
-        });
-
-    });
 </script>
 
 <?php
