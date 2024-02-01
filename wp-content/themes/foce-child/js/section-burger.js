@@ -1,40 +1,32 @@
-let clicBurger = document.querySelector(".menu-toggle img");
-console.log(clicBurger);
-
-var burgerClicked = false;
-
-document.querySelector('.menu-toggle img').addEventListener('click', function() {
-    burgerClicked = !burgerClicked; // Inverser l'état à chaque clic
-    console.log(burgerClicked);
-
-    var burgerMenu = document.getElementById('burger-menu');
-
-    if (burgerClicked) {
-        burgerMenu.classList.add('visible');
-    } else {
-        burgerMenu.classList.remove('visible');
-    }
-});
-
-
 document.addEventListener("DOMContentLoaded", function () {
     let clicBurger = document.querySelector(".menu-toggle img");
-    let etatOriginal = true; // variable pour suivre l'état actuel
+    var burgerMenu = document.getElementById('burger-menu');
+    var burgerClicked = false;
 
     clicBurger.addEventListener("click", function () {
-        // Code à exécuter au clic
-        if (etatOriginal) {
+        burgerClicked = !burgerClicked;
+
+        if (burgerClicked) {
+            burgerMenu.classList.add('visible');
             changementImage("wp-content/uploads/2024/01/Burgercroix.svg");
         } else {
+            burgerMenu.classList.remove('visible');
             changementImage("wp-content/uploads/2024/01/Burger.svg");
         }
+    });
 
-        // Inversez l'état pour le prochain clic
-        etatOriginal = !etatOriginal;
+    var menuLinks = document.querySelectorAll('#burger-menu a');
+
+    menuLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            burgerMenu.classList.remove('visible');
+            burgerClicked = false;
+
+            changementImage("wp-content/uploads/2024/01/Burger.svg");
+        });
     });
 
     function changementImage(nouveauSrc) {
-        // Changez ici l'attribut src de l'image
         clicBurger.src = nouveauSrc;
     }
 });

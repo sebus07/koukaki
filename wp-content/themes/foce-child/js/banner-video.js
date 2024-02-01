@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     bannerVideo.className = "banner-video"; // Ajoutez une classe à la balise vidéo
 
     bannerElement.style.position = "relative";
-    bannerElement.style.background = "url('https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/DWP+IW_P9+Studio+d'animation/Studio+Koukaki-vide%CC%81o+header+sans+son+(1).mp4') no-repeat center center fixed";
     bannerElement.style.backgroundSize = "cover";
     bannerElement.innerHTML = "";
 +
