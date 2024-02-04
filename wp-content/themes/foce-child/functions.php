@@ -1,13 +1,11 @@
 <?php
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
 function theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'nom-du-style', get_stylesheet_directory_uri() . '/css/style.css' );
+    wp_enqueue_style( 'sass-style', get_stylesheet_directory_uri() . '/css/sass.css' );
 }
-
-function enqueue_custom_styles() {
-    wp_enqueue_style('nom-du-style', get_stylesheet_directory_uri() . '/css/style.css');
-}
-add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
 
 // Get customizer options form parent theme
 if ( get_stylesheet() !== get_template() ) {

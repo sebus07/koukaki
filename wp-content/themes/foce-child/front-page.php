@@ -6,7 +6,7 @@ get_header();
     <section class="banner">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
     </section>
-    <section id="story" class="story">
+    <section id="story" class="story toAnim">
         <h2>
             <div class="hidden"><span class="premier" id="gliding-text">
                     <div class="hidden"><span class="premier">L'</span><span class="deuxieme">histoire</span></div>
@@ -26,7 +26,7 @@ get_header();
         $characters_query = new WP_Query($args);
         ?>
 
-        <article id="characters">
+        <article id="characters" class="toAnim">
             <div class="main-character title-container">
                 <h3 class="pers">
                     <div class="hidden">
@@ -60,7 +60,7 @@ get_header();
                 </div>
             </div>
         </article>
-        <article id="place">
+        <article id="place" class="toAnim">
             <div>
                 <h3>
                     <div class="hidden"><span class="premier">Le</span><span class="deuxieme"> Lieu</span></div>
@@ -73,7 +73,7 @@ get_header();
         </article>
     </section>
 
-    <section id="studio">
+    <section id="studio" class="toAnim">
         <h2>
             <div class="hidden"><span class="premier">Studio</span><span class="deuxieme"> Koukaki</span></div>
         </h2>
@@ -86,6 +86,8 @@ get_header();
 
 <!-- le fichier JavaScript de Swiper -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
 
 </script>
 

@@ -1,0 +1,33 @@
+.story h2::after,
+.story__article::after,
+li.histoire::after,
+li.lieu::before,
+li.personnages::before,
+li.personnages::after,
+li.studio::after,
+#studio h2::after,
+#studio h2::before,
+.site-footer::before,
+.site-footer ul::after,
+#colophon.site-footer::after {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  animation: rotating 15s linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateInfinitely {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=sass.css.map */

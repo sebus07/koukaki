@@ -1,45 +1,22 @@
-.pers{
-  text-align: left; /* Aligner le texte à gauche */
-  margin: 0; /* Supprimer les marges par défaut */
-  padding: 0; /* Supprimer les espacements internes par défaut */
+/*titre*/
+
+h2.maNouvelleClassePersonages,
+h3.lieu,
+h2.maNouvelleClasseStudio
+{
+  font-size: 42px;
 }
 
-// fleur rotation
-.story h2::after,
-.story__article::after,
-li.histoire::after,
-li.lieu::before,
-li.personnages::before,
-li.personnages::after,
-li.studio::after,
-#studio h2::after,
-#studio h2::before,
-.site-footer::before,
-.site-footer ul::after,
-#colophon.site-footer::after {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  animation: rotating 15s linear infinite;
+/* Style initial */
+.animate-on-scroll {
+  opacity: 0; /* Element initialement transparent */
+  transition: opacity 1s ease; /* Transition de l'opacité sur 1 seconde avec une fonction d'accélération (ease) */
 }
 
-@keyframes rotating {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+/* Style lorsque l'élément est dans la zone d'affichage */
+.animate-on-scroll.visible {
+  opacity: 1; /* Element devenant visible */
 }
-
-@keyframes rotateInfinitely {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
 
 .mobile-video {
   width: 100%;
@@ -270,9 +247,8 @@ li.studio::after,
   height: 30px;
   margin-right: 80px;
   padding: 0;
-  margin: 0;
-  
 }
+
 .site-title a{
   margin-left: 80px;
   padding-bottom: 50px;
@@ -499,7 +475,6 @@ li.studio::before{
     .lieu span.deuxieme,
     #story h2 span.deuxieme {
       position: relative;
-      width: 300px;
     }
 
     .animate-premier {
@@ -539,7 +514,7 @@ li.studio::before{
 
 .banner video {
   position: relative;
-  top: -100px; /* Commencez à 1000px au-dessus de la position normale */
+  top: -100px; /* Commencez à 100px au-dessus de la position normale */
   animation: slideDown 1s ease-in-out forwards; /* Animation de descente */
   position: center !important;
   width: 100%;
@@ -554,6 +529,16 @@ li.studio::before{
     top: 0; /* Descendez jusqu'à la position normale (0px) */
   }
 }
+
+
+@keyframes slideDown {
+  to {
+    top: 0; /* Descendez jusqu'à la position normale (0px) */
+  }
+}
+
+
+
 .banner img {
   position: relative;
   top: 0px; /* Commencez à 50px en dessous de la position normale */
@@ -566,7 +551,6 @@ li.studio::before{
   align-content: flex-start;
   flex-wrap: wrap;
   height: calc(100vw * 0.5587) !important;
-
   margin: 0;
   padding: 0;
   min-height: 100px !important;
@@ -745,9 +729,7 @@ li.studio::before{
           align-items: center;
           justify-content: center;
         }
-        .banner{
-          background-image: url("../../../uploads/2024/01/banner.png");
-        }
+
       
         .texte p {
           font-size:1.2rem;
@@ -838,7 +820,10 @@ li.studio::before{
           top: 7vw;
         }
       }
-      @media only screen and (max-width: 400px) {
+
+
+
+      @media only screen and (max-width: 400px) {//////////////////////////////////////////////////
         .oscars {
           display: flex;
           flex-direction: column;
@@ -846,8 +831,8 @@ li.studio::before{
           justify-content: center;
         }
       
-        .maNouvelleClasseStudio {
-          font-size: 2rem;
+        .maNouvelleClasseStudio h2 {
+          font-size: 1.6rem !important;
         }
         .maNouvelleClassePersonages{
           text-align: left;
@@ -868,10 +853,10 @@ li.studio::before{
           min-height: 300px;
         }
 
-        .hidden h2,
-        .lieu,
-        #characters h3{
-         font-size: 25px;
+       
+        .lieu
+        {
+         font-size: 12px;
         }
         .maNouvelleClassePersonages{
           margin-left: 150px;
@@ -1099,11 +1084,53 @@ li.studio::before{
 
 /* Styles spécifiques pour les smartphones (largeur d'écran < 768 pixels) */
 @media only screen and (max-width: 767px) {
-  .banner {
-    background-image: url("./assets/images/banner.pn") !important;
-    /* Ajoutez d'autres styles si nécessaire pour la version smartphone */
+
+  .banner-video{
+    display: none;
   }
+
+
+  .banner {
+    background-image: url("../../foce/assets/images/banner.png") !important;
+    position: relative;
+    top: -100px;
+    width: 100%;
+    height: auto;
+    animation: slideDown 1s ease-in-out forwards;
 }
+
+.banner img {
+    position: relative;
+    top: 100%;
+    animation: slideUp 1s ease-in-out forwards;
+    margin-top: 33px;
+}
+
+@keyframes slideDown {
+    from {
+        top: -100px;
+    }
+    to {
+        top: 0px;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        top: 100%;
+    }
+    to {
+        botom: 0px;
+    }
+}
+
+ p{
+  font-size: 12px;
+ }
+
+}
+
+
 
 /* Styles spécifiques pour les écrans plus larges (largeur d'écran >= 768 pixels) */
 @media only screen and (min-width: 768px) {
@@ -1114,11 +1141,26 @@ li.studio::before{
 }
 
 
+@media only screen and (max-width: 700px) {
+  h2.maNouvelleClasseStudio {
+    font-size: 2rem !important;
+    padding: 1em 2em;
+  }
+  h3.lieu{
+    font-size: 2rem !important;
+  }
+}
 
+/////////////////////////////////animation face in////////////////////////////////////////
 
+.toAnim {
+  opacity: 0.1;
+  transition: opacity 1s ease 0s;
+}
 
-
-
+.toAnim.anim {
+  opacity: 1;
+}
 
 
 
