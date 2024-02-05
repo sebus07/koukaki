@@ -85,7 +85,7 @@ h2.maNouvelleClasseStudio
 .swiper {
   width: 2400px;
   height: 460px;
-
+  padding-left: 120px;
 }
 
 .swiper-slide {
@@ -516,7 +516,6 @@ li.studio::before{
   position: relative;
   top: -100px; /* Commencez à 100px au-dessus de la position normale */
   animation: slideDown 1s ease-in-out forwards; /* Animation de descente */
-  position: center !important;
   width: 100%;
   /* Ajustez selon vos besoins */
   height: auto;
@@ -816,7 +815,7 @@ li.studio::before{
         }
         
         .menu-list li.studio::before {
-          right: 70;
+          right: 220px;
           top: 7vw;
         }
       }
@@ -1035,7 +1034,7 @@ li.studio::before{
         #place .imgLieu {
           top: 30%;
           transform: translateY(-110%);
-          opacity: 1.5;
+          opacity: 1;
           filter: blur(10px);
         }
         
@@ -1119,9 +1118,6 @@ li.studio::before{
     from {
         top: 100%;
     }
-    to {
-        botom: 0px;
-    }
 }
 
  p{
@@ -1148,6 +1144,9 @@ li.studio::before{
   }
   h3.lieu{
     font-size: 2rem !important;
+  }
+  h3.maNouvelleClassePersonages{
+    align-items: center;
   }
 }
 
