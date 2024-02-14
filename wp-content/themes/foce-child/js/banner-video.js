@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-  let bannerElement = document.querySelector(".banner");
+document.addEventListener("DOMContentLoaded", function () {.
 
   if (bannerElement) {
     let bannerVideo = document.createElement("video");
