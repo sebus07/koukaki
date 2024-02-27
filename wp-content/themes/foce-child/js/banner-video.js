@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {.
+document.addEventListener("DOMContentLoaded", function () {
+  let bannerElement = document.querySelector(".banner"); // Déplacer cette ligne en haut
 
   if (bannerElement) {
     let bannerVideo = document.createElement("video");
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {.
     bannerElement.style.position = "relative";
     bannerElement.style.backgroundSize = "cover";
     bannerElement.innerHTML = "";
-+
+
     bannerElement.appendChild(bannerVideo);
 
     let logoImage = document.createElement("img");
@@ -40,18 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {.
 
     // Initialisez la classe au chargement de la page
     updateVideoClass();
-  }
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-  let bannerElement = document.querySelector(".banner");
-  let bannerVideo = document.querySelector(".banner-video");
-
-  if (bannerElement && bannerVideo) {
-    // Attendre que la vidéo soit chargée
-    bannerVideo.addEventListener("loadedmetadata", function () {
-      // Définir la hauteur de la section sur la hauteur de la vidéo
-      bannerElement.style.height = bannerVideo.videoHeight + "px";
-    });
+    if (bannerVideo) {
+      // Attendre que la vidéo soit chargée
+      bannerVideo.addEventListener("loadedmetadata", function () {
+        // Définir la hauteur de la section sur la hauteur de la vidéo
+        bannerElement.style.height = bannerVideo.videoHeight + "px";
+      });
+    }
   }
 });
